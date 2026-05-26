@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private BoxCollider blowCollider;
 
     [Header("Action References")]
     [SerializeField] private InputActionReference spinAction;
@@ -53,6 +55,11 @@ public class PlayerController : MonoBehaviour
         if (blowAction.action.IsPressed())
         {
             rb.AddForce(transform.forward.normalized * -1 * blowPower, ForceMode.Acceleration);
+            blowCollider.enabled = true;
+        }
+        else
+        {
+            blowCollider.enabled = false;
         }
     }
 }
