@@ -1,0 +1,105 @@
+{
+    "version": 1,
+    "name": "PlayerInputs",
+    "maps": [
+        {
+            "name": "Player1",
+            "id": "f06ad1c9-d71a-48db-bf49-0d51d79eed4d",
+            "actions": [
+                {
+                    "name": "SpinAction",
+                    "type": "Value",
+                    "id": "2b9c473c-d5be-4d85-a97f-4e410c84ce3c",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "BlowAction",
+                    "type": "Button",
+                    "id": "e6955f99-b75d-4d8b-9582-3cec78f0e5a9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "b6821024-ecfc-4187-8c4d-f71515b126a9",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpinAction",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "854750aa-43df-4988-847e-3b0e5af8dac6",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpinAction",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "170e61c0-7cb5-4f09-aad8-c05898bb8a32",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpinAction",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "31fdb9d9-8adb-4188-b735-91e5cef91a74",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BlowAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Player2",
+            "id": "daa21121-f1fa-455f-b69f-5ec0d83ada5c",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "b528a82b-88bc-48f9-be4c-c32f6da08541",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "333ff89e-0f55-4948-89c5-d2c2cdb0db3c",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
