@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LeverBase : MonoBehaviour
 {
-    private HingeJoint hinge;
+    protected HingeJoint hinge;
 
     public bool active;
 
@@ -25,7 +25,7 @@ public class LeverBase : MonoBehaviour
     protected virtual void CheckRotation()
     {
         //Faz a checagem para ver se a alavanca está girada o suficiente para ser ativada
-        Activate(hinge.angle >= hinge.limits.max - 15f);
+        Activate(hinge.angle >= hinge.limits.max - 10);
     }
 
     protected virtual void Activate(bool i)
