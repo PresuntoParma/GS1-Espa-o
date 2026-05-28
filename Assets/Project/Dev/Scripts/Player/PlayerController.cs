@@ -35,8 +35,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Spin();
         Blow();
+    }
+
+    private void FixedUpdate()
+    {
+        Spin();
     }
 
     private void Spin()
@@ -45,9 +49,10 @@ public class PlayerController : MonoBehaviour
         Vector3 rotation = transform.eulerAngles;
 
         rotation.x = rotation.z = 0;
-        rotation.y += Time.deltaTime * dir * spinSpeed;
+        rotation.y += dir * spinSpeed;
 
-        transform.eulerAngles = rotation;
+        rb.MoveRotation(Quaternion.Euler(rotation)
+);
     }
 
     private void Blow()
