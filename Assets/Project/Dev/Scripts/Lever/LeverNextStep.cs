@@ -11,6 +11,5 @@ public class LeverNextStep : LeverBase
 
         if (i)
             gameManager.NextLevel();
-        print("Ativou next step alavanca");
     }
 }
