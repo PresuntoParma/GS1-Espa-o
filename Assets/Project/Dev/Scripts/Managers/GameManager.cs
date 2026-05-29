@@ -1,9 +1,19 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Step 2")]
     [SerializeField] private Animator[] doorsStep2;
+    [SerializeField] private GameObject[] wires;
+
+    private int repairedWires = 0;
+
+
+    [Header("Step 3")]
     [SerializeField] private Animator[] doorsStep3;
+
+
     private int currentStep = 1;
 
     public void NextLevel()
@@ -11,6 +21,14 @@ public class GameManager : MonoBehaviour
         //Avança a etapa do level
         currentStep++;
         UnlockDoors();
+    }
+
+    public void WireRepaired()
+    {
+        repairedWires++;
+
+        if (repairedWires == wires.Length)
+            NextLevel();
     }
 
     private void UnlockDoors()
@@ -30,6 +48,15 @@ public class GameManager : MonoBehaviour
                     doorsStep3[i].SetTrigger("pOpen");
                 }
                 break;
+            case 4:
+                FinishLevel();
+                break;
         }
+    }
+
+    private void FinishLevel()
+    {
+        //Ir para tela de fim de jogo
+        SceneManager.LoadScene("SCN_Level01");
     }
 }
