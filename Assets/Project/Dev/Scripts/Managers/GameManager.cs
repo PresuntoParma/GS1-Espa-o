@@ -75,6 +75,8 @@ public class GameManager : MonoBehaviour
                 for (int i = 0; i < doorsStep3.Length; i++)
                 {
                     doorsStep3[i].SetTrigger("pOpen");
+                    AudioManager.Instance.PlayVoice(AudioManager.Instance.voicedTracks[5]);
+                    StartCoroutine(DelayAudio(6, 10));
                 }
                 break;
             case 4:
