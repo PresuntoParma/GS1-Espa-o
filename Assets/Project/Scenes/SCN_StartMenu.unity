@@ -1537,6 +1537,21 @@ MonoBehaviour:
   gameplayTracks:
   - {fileID: 8300000, guid: 1dec6122cfa37c148889f2f4d0c3aa8e, type: 3}
   - {fileID: 8300000, guid: 4dd40ce1e3a360240aab7b7562a4aab3, type: 3}
+  voicedTracks:
+  - {fileID: 8300000, guid: 1dbdd0e8128461b44b6a64a38564234e, type: 3}
+  - {fileID: 8300000, guid: 9af7da369d3eef645b2abba03c7cc5a1, type: 3}
+  - {fileID: 8300000, guid: 5a3ef2597d3308146a299176763ea63a, type: 3}
+  - {fileID: 8300000, guid: f42f17a626951964c8540fbae28d9611, type: 3}
+  - {fileID: 8300000, guid: 9f6cdb4aac367dc4cbc6a394a4af761d, type: 3}
+  - {fileID: 8300000, guid: 833d443fea79e5d42a28bf75c166c8eb, type: 3}
+  - {fileID: 8300000, guid: eaf5acd7e6264034d97772b7abeb87b5, type: 3}
+  - {fileID: 8300000, guid: 7ee356d95e4e4de408754141fc28b942, type: 3}
+  - {fileID: 8300000, guid: 3f3b0775e33f63d459fc0fec8e5fd14a, type: 3}
+  - {fileID: 8300000, guid: 127d06c03122cfd4b8d3e8059d3dbcc4, type: 3}
+  - {fileID: 8300000, guid: 8e6886add2750d94c8a6b2d923f46b2b, type: 3}
+  - {fileID: 8300000, guid: dfe41fc8b815ff6438b53fca02461982, type: 3}
+  - {fileID: 8300000, guid: 3625c4cd7d7ad4441af04001a494c965, type: 3}
+  - {fileID: 8300000, guid: c098fca48016edf45aa37dace81f0e1c, type: 3}
 --- !u!4 &1767850991
 Transform:
   m_ObjectHideFlags: 0
