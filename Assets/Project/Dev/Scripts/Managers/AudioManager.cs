@@ -31,6 +31,9 @@ public class AudioManager : MonoBehaviour
     // a musica que tá tocando agr
     private int currentTrackIndex;
 
+    [Header("Voiced")]
+    public AudioClip[] voicedTracks;
+
     private void Awake()
     {
         // evitando de duplicar o audiogoon
@@ -168,5 +171,13 @@ public class AudioManager : MonoBehaviour
             return;
 
         sfxSource.PlayOneShot(clip, volume);
+    }
+
+    public void PlayVoice(AudioClip clip)
+    {
+        if (clip == null)
+            return;
+
+        sfxSource.PlayOneShot(clip);
     }
 }

@@ -48,7 +48,14 @@ public class GameManager : MonoBehaviour
         repairedWires++;
 
         if (repairedWires == wires.Length)
+        {
             NextLevel();
+            AudioManager.Instance.PlayVoice(AudioManager.Instance.voicedTracks[13]);
+        }
+        else
+        {
+            AudioManager.Instance.PlayVoice(AudioManager.Instance.voicedTracks[12]);
+        }
     }
 
     private void UnlockDoors()
@@ -60,6 +67,8 @@ public class GameManager : MonoBehaviour
                 for (int i = 0; i < doorsStep2.Length; i++)
                 {
                     doorsStep2[i].SetTrigger("pOpen");
+                    AudioManager.Instance.PlayVoice(AudioManager.Instance.voicedTracks[11]);
+                    StartCoroutine(DelayAudio(10, 5));
                 }
                 break;
             case 3:
@@ -74,6 +83,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    IEnumerator DelayAudio(int a, float d)
+    {
+        yield return new WaitForSeconds(d);
+        AudioManager.Instance.PlayVoice(AudioManager.Instance.voicedTracks[a]);
+    }
+
     private void FinishLevel()
     {
         //Ir para tela de fim de jogo
@@ -82,6 +97,22 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator Timer()
     {
+        if (currentTime == 90)
+        {
+            AudioManager.Instance.PlayVoice(AudioManager.Instance.voicedTracks[4]);
+        }
+        else if (currentTime == 60)
+        {
+            AudioManager.Instance.PlayVoice(AudioManager.Instance.voicedTracks[2]);
+        }
+        else if (currentTime == 30)
+        {
+            AudioManager.Instance.PlayVoice(AudioManager.Instance.voicedTracks[1]);
+        }
+        else if (currentTime == 10)
+        {
+            AudioManager.Instance.PlayVoice(AudioManager.Instance.voicedTracks[0]);
+        }
         currentTime -= 1;
         yield return new WaitForSeconds(1f);
         if (currentTime <= 0) GameOverExplosion();
