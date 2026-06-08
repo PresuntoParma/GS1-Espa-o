@@ -7,7 +7,12 @@ public class BlowerWind : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        other.gameObject.GetComponent<Rigidbody>()?.AddForce(transform.up.normalized * blowPower, ForceMode.Acceleration);
+        //other.gameObject.GetComponent<Rigidbody>()?.AddForce(transform.up.normalized * blowPower, ForceMode.Acceleration);
+
+        if (other.TryGetComponent<Rigidbody>(out Rigidbody rb))
+        {
+            rb.AddForce(transform.up * blowPower, ForceMode.Acceleration);
+        }
     }
 
 }

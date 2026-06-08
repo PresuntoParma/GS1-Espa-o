@@ -20,6 +20,8 @@ public class CargoZones : MonoBehaviour
         if (other.gameObject.CompareTag(cargoColor.ToString()))
         {
             CheckCargoAmmount(+1);
+
+            ChangeOutlineColor(other, Color.green);
         }
     }
 
@@ -28,6 +30,27 @@ public class CargoZones : MonoBehaviour
         if (other.gameObject.CompareTag(cargoColor.ToString()))
         {
             CheckCargoAmmount(-1);
+
+            ChangeOutlineColor(other, Color.red);
+        }
+    }
+
+
+    // pego a referência da mesh renderer, procuro pelo material que tem o shader, pego a referência do S.Graph e aplico a mudança de cor
+
+    private void ChangeOutlineColor(Collider other, Color color)
+    {
+        Renderer rend = other.GetComponent<Renderer>();
+
+        if (rend == null)
+            return;
+
+        foreach (Material mat in rend.materials)
+        {
+            if (mat.name.Contains("Outline"))
+            {
+                mat.SetColor("_OutlineColor", color);
+            }
         }
     }
 

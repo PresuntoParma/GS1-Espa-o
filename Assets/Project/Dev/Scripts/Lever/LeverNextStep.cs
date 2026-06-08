@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LeverNextStep : LeverBase
@@ -14,6 +15,7 @@ public class LeverNextStep : LeverBase
         {
             gameManager.NextLevel();
             disabled = true;
+           AudioManager.Instance.StopAlarm();
         }
     }
 }

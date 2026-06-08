@@ -9,6 +9,20 @@ TagManager:
   - Red
   - Green
   - Blue
+  - ObjTeste
+  - Spiffo
+  - Metal
+  - Cloth
+  - MetalToolBox
+  - MetalBox
+  - Box
+  - Lever
+  - Chair
+  - Table
+  - Wall
+  - Bed
+  - MetalPanel
+  - CardBox
   layers:
   - Default
   - TransparentFX

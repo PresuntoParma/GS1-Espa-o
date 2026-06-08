@@ -1,8 +1,18 @@
+using System.Collections;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Scene Manager")]
+    [SerializeField] private LoadSceneManager sceneManager;
+
+    [Header("Step 1")]
+    [SerializeField] private float maxTime;
+
+    private float currentTime;
+    private Coroutine currentTimer;
+
     [Header("Step 2")]
     [SerializeField] private Animator[] doorsStep2;
     [SerializeField] private GameObject[] wires;
@@ -16,9 +26,19 @@ public class GameManager : MonoBehaviour
 
     private int currentStep = 1;
 
+    private void Start()
+    {
+        currentTime = maxTime;
+        currentTimer = StartCoroutine(Timer());
+        AudioManager.Instance.PlayGameplayMusic();
+        AudioManager.Instance.PlayAmbience();
+        AudioManager.Instance.StartAlarm();
+    }
+
     public void NextLevel()
     {
         //Avança a etapa do level
+        if (currentStep == 1) StopCoroutine(currentTimer);
         currentStep++;
         UnlockDoors();
     }
@@ -57,6 +77,20 @@ public class GameManager : MonoBehaviour
     private void FinishLevel()
     {
         //Ir para tela de fim de jogo
-        SceneManager.LoadScene("SCN_Level01");
+        sceneManager.LoadScene("SCN_Level01");
+    }
+
+    private IEnumerator Timer()
+    {
+        currentTime -= 1;
+        yield return new WaitForSeconds(1f);
+        if (currentTime <= 0) GameOverExplosion();
+        currentTimer = StartCoroutine(Timer());
+    }
+
+    private void GameOverExplosion()
+    {
+        //Explodir dando game over ain mini goon
+        sceneManager.LoadScene("SCN_Level01");
     }
 }

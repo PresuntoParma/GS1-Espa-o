@@ -10,6 +10,7 @@ public class LeverDoor : LeverBase
         if (i)
         {
             door.SetTrigger("pOpen");
+
         }
 
     }
