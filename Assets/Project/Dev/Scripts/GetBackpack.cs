@@ -11,6 +11,7 @@ public class GetBackpack : MonoBehaviour
         {
             backpackInPlayer.SetActive(true);
             Destroy(this.gameObject);
+            AudioManager.Instance.PlayVoice(AudioManager.Instance.voicedTracks[10]);
         }
         else if (other.gameObject.CompareTag("Backpack"))
         {

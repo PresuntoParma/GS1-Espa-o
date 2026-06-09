@@ -68,15 +68,15 @@ public class GameManager : MonoBehaviour
                 {
                     doorsStep2[i].SetTrigger("pOpen");
                     AudioManager.Instance.PlayVoice(AudioManager.Instance.voicedTracks[11]);
-                    StartCoroutine(DelayAudio(10, 5));
+                    StartCoroutine(DelayAudio(8, 10));
                 }
                 break;
             case 3:
                 for (int i = 0; i < doorsStep3.Length; i++)
                 {
                     doorsStep3[i].SetTrigger("pOpen");
-                    AudioManager.Instance.PlayVoice(AudioManager.Instance.voicedTracks[5]);
-                    StartCoroutine(DelayAudio(6, 10));
+                    StartCoroutine(DelayAudio(5, 5));
+                    StartCoroutine(DelayAudio(6, 15));
                 }
                 break;
             case 4:
